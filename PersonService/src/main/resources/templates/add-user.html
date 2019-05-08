@@ -1,0 +1,10 @@
+<form action="#" th:action="@{/adduser}" th:object="${person}" method="post">
+<span style="color:red" th:text="${USERMANDATORY}"></span><br/>
+    <label for="name">Customer Name</label><br/>
+    <input type="text" th:field="*{name}" id="custId" placeholder="name"><br/>
+    <span  style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span><br/>
+    <label for="email">Last Name</label><br/>
+    <input type="text" th:field="*{lastName}" id="lastName" placeholder="lastName"><br/>
+    <span  style="color:red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span><br/>
+    <input type="submit" value="Create User">   
+</form>

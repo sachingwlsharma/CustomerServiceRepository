@@ -1,0 +1,26 @@
+<div th:switch="${person}">
+    <h2 th:case="null">No persons yet!</h2>
+        <div th:case="*">
+            <h2>Users</h2>
+            <table>
+                <thead>
+                    <tr>
+                    	<th>ID</th>
+                        <th>Name</th>
+                        <th>lastName</th>
+                        <th>showReport</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="person : ${persons}">
+                	<td th:text="${person.id}"></td>
+                    <td th:text="${person.name}"></td>
+                    <td th:text="${person.lastName}"></td>
+                    <td><a th:href="@{/findReportById/{id}(id=${person.id})}">Report</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>      
+    <p><a href="/signup">Add a new user</a></p>
+    <p><a href="/newAccount">Create Account</a></p>
+</div>

@@ -1,0 +1,9 @@
+<form action="#" th:action="@{/createAccount}" th:object="${account}" method="post">
+    <label for="name">Customer ID</label><br/>
+    <input type="text" th:field="*{custId}" id="custId" placeholder="custId"><br/>
+    <span style="color:red"  th:if="${#fields.hasErrors('custId')}" th:errors="*{custId}"></span><br/>
+    <label for="email">Initial Credit</label><br/>
+    <input type="text" th:field="*{initialCredit}" id="initialCredit" placeholder="initialCredit"><br/>
+    <span style="color:red"  th:if="${#fields.hasErrors('initialCredit')}" th:errors="*{initialCredit}"></span><br/>
+    <input type="submit" value="Create Account">   
+</form>
